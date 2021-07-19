@@ -26,8 +26,8 @@ export function AlurakutMenu({ githubUser }) {
         <nav style={{ flex: 1 }}>
           {[
             { name: "Inicio", slug: "/" },
-            { name: "Amigos", slug: "/amigos" },
-            { name: "Comunidades", slug: "/comunidades" },
+            { name: "Brothers", slug: "/amigos" },
+            { name: "Galera", slug: "/comunidades" },
           ].map((menuItem) => (
             <Link
               key={`key__${menuItem.name.toLocaleLowerCase()}`}
@@ -41,7 +41,7 @@ export function AlurakutMenu({ githubUser }) {
         <nav>
           <a href={`/logout`}>Sair</a>
           <div>
-            <input placeholder="Pesquisar no Orkut" />
+            <input placeholder="Pesquisar no Alurakut" />
           </div>
         </nav>
 
@@ -58,7 +58,7 @@ export function AlurakutMenu({ githubUser }) {
 }
 AlurakutMenu.Wrapper = styled.header`
   width: 100%;
-  background-color: #308bc5;
+  background-color: #353535;
   .alurakutMenuProfileSidebar {
     background: white;
     position: fixed;
@@ -98,7 +98,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
   }
   .container {
-    background-color: #308bc5;
+    background-color: #353535;
     padding: 7px 16px;
     max-width: 1110px;
     margin: auto;
@@ -131,7 +131,7 @@ AlurakutMenu.Wrapper = styled.header`
         text-decoration: none;
         &:after {
           content: " ";
-          background-color: #5292c1;
+          background-color: #202020;
           display: block;
           position: absolute;
           width: 1px;
@@ -145,7 +145,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
     input {
       color: #ffffff;
-      background: #5579a1;
+      background: #202020;
       padding: 10px 42px;
       border: 0;
       background-image: url(${`${BASE_URL}/icons/search.svg`});
@@ -154,7 +154,7 @@ AlurakutMenu.Wrapper = styled.header`
       border-radius: 1000px;
       font-size: 12px;
       ::placeholder {
-        color: #ffffff;
+        color: #999999;
         opacity: 1;
       }
     }
@@ -230,7 +230,7 @@ export function AlurakutProfileSidebarMenuDefault() {
 AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   a {
     font-size: 12px;
-    color: #2e7bb4;
+    color: #202020;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -351,12 +351,12 @@ const AlurakutLoginScreen = css`
   :root {
     --backgroundPrimary: #d9e6f6;
     --backgroundSecondary: #f1f9fe;
-    --backgroundTertiary: #ffffff;
+    --backgroundTertiary: rgba(255, 255, 255, 0.8);
     --backgroundQuarternary: #bbcde8;
-    --colorPrimary: #2e7bb4;
+    --colorPrimary: #202020;
     --colorSecondary: #388bb0;
     --colorTertiary: #2f4a71;
-    --colorQuarternary: #d81d99;
+    --colorQuarternary: #353535;
     --textPrimaryColor: #333333;
     --textSecondaryColor: #ffffff;
     --textTertiaryColor: #5a5a5a;
@@ -384,6 +384,7 @@ const AlurakutLoginScreen = css`
     .logoArea {
       grid-area: logoArea;
       background-color: var(--backgroundTertiary);
+      backdrop-filter: blur(6px);
       border-radius: var(--commonRadius);
       padding: var(--gutter);
       text-align: center;
@@ -425,7 +426,8 @@ const AlurakutLoginScreen = css`
         padding: var(--gutter);
         padding-left: 50px;
         padding-right: 50px;
-        background-color: var(--backgroundSecondary);
+        background-color: var(--backgroundTertiary);
+        backdrop-filter: blur(6px);
         border-radius: var(--commonRadius);
         flex: 1;
         &:not(:last-child) {
@@ -467,7 +469,8 @@ const AlurakutLoginScreen = css`
     }
     .footerArea {
       grid-area: footerArea;
-      background-color: var(--backgroundQuarternary);
+      background-color: var(--backgroundTertiary);
+      backdrop-filter: blur(6px);
       border-radius: var(--commonRadius);
       padding: 8px;
       p {
